@@ -58,6 +58,13 @@ body {
   font-size: 3.75rem;
   font-weight: 400;
   letter-spacing: 35px;
+
+  animation-name: moveInLeft;  /* Animation being referenced */
+  animation-duration: 1s;  /* How long animation should take */
+  animation-tming-function: ease-out;  /* This determines how the animation should proceed */
+
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 3s; */
 }
 
 .heading-primary-sub {
@@ -65,4 +72,20 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 17.4px;
+}
+
+@keyframes moveInLeft {  /* Percentages correspond to times during the animation */
+  0% {  /* Before the animation starts */
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {  /* You can include ANY percentage you want! */
+    transform: translateX(10px);
+  }
+
+  100% {  /* When the animation finishes */
+    opacity: 1;
+    transform: translate(0);  /* Setting it to 0 means it will look the way it does normally */
+  }
 }
