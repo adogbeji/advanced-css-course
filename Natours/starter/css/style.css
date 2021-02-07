@@ -46,12 +46,14 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .heading-primary {
   color: #FFFFFF;
   text-transform: uppercase;
   backface-visibility: hidden;  /* Guards against animation 'shakiness' */
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -106,4 +108,25 @@ body {
     opacity: 1;
     transform: translate(0);  /* Setting it to 0 means it will look the way it does normally */
   }
+}
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  color: #777777;
+  background-color: #FFFFFF;
 }
