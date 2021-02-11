@@ -116,17 +116,43 @@ body {
   padding: 15px 40px;
   display: inline-block;
   border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;  /* Reference for ::after psuedo-element */
 }
 
 .btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
   transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
   color: #777777;
   background-color: #FFFFFF;
+}
+
+.btn::after {
+  content: '';  /* Content property must be specified for the ::after psuedo-element to appear */
+  display: inline-block;  /* Display property must also be specified */
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;  /* Places ::after psuedo-element behind the button */
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #FFFFFF;
+}
+
+.btn:hover::after {  /* The ::after psuedo-element is being applied in the hover state */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
