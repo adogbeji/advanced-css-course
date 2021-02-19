@@ -110,6 +110,18 @@ body {
   }
 }
 
+@keyframes moveInFromBottom {  /* Percentages correspond to times during the animation */
+  0% {  /* Before the animation starts */
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {  /* When the animation finishes */
+    opacity: 1;
+    transform: translate(0);  /* Setting it to 0 means it will look the way it does normally */
+  }
+}
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -155,4 +167,9 @@ body {
 .btn:hover::after {  /* The ::after psuedo-element is being applied in the hover state */
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInFromBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;  /* Automatically applies styles of the 0% BEFORE the animation starts */
 }
